@@ -1,0 +1,10 @@
+How to set up everything to control Arduino Uno via Xbox Controller
+
+1) Plug in your Arduino and Xbox Controller to the PC
+2) Launch Arduino IDE and open the "cppSerial" project
+3) Make sure that the port is set to COM3 (Tools -> Port -> COM3(Arduino/Genuino UNO))
+4) Upload it to Arduino
+5) Launch Visual Studio
+6) Open the "XBoxUno.sln" file (it should be in the "Recent" tab)
+7) Press the green triangle ("Local Windows Debugger" button)
+8) ENJOY
