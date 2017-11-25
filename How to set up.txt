@@ -1,0 +1,21 @@
+How to make your Xbox controller work with Arduino
+
+
+
+Instruction for Windows
+
+1) Download Microsoft Visual Studio
+2) Download Arduino IDE
+3) Plug in your Arduino and Xbox Controller to the PC
+4) Create a new project in Arduino IDE and paste the code from "cppSerial.ino" there
+5) Make sure that the port is set to COM3 (Tools -> Port -> COM3(Arduino/Genuino UNO))
+6) Upload it to Arduino
+7) Install OpenGL, GLEW and GLFW using instructions from here: https://youtu.be/vGptI11wRxE but when creating a project in Visual Studio, choose Visual C++ -> CLR -> CLR Console Application
+8) In that new project paste the code from "XBoxUno.cpp" to your main .cpp file
+9) Press the green triangle ("Local Windows Debugger" button)
+10) ENJOY
+
+
+
+Instructions for Mac
+
