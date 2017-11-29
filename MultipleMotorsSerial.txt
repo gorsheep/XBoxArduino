@@ -1,0 +1,55 @@
+//control 2 rotors via serial connection (2 directions)
+
+//Задаём, какие порты будем использовать для управления моторами
+#define M1_1 2
+#define M1_2 3
+#define M2_1 4
+#define M2_2 5
+
+//Задаём время задержки 5 секунд
+#define TIME 5000
+
+//Задаём скорость вращения роторов в двух направлениях
+unsigned char Forward_Speed = 129;
+unsigned char Back_Speed = 129;
+
+
+void setup() {
+
+//Объявляем пины управления мостом как выходы:
+pinMode(M1_1, OUTPUT);
+pinMode(M1_2, OUTPUT);
+pinMode(M2_1, OUTPUT);
+pinMode(M2_2, OUTPUT);
+
+//Открываем сеанс связи по serial connection
+Serial.begin(9600);
+
+}
+
+
+void loop() {
+
+
+if(Serial.available()){
+
+  int data = Serial.read();
+  if(data == 'w'){
+    analogWrite(M1_1, Forward_Speed); 
+    analogWrite(M1_2, 0);
+  }
+  else if(data == 's'){
+    analogWrite(M1_1, 0);
+    analogWrite(M1_2, Back_Speed); 
+  }
+  else{
+    analogWrite(M1_1, 0); 
+    analogWrite(M1_2, 0);
+    analogWrite(M2_1, 0); 
+    analogWrite(M2_2, 0);
+  }
+
+}
+
+
+}
